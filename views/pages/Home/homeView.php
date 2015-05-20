@@ -6,10 +6,67 @@
  * Date: 2/24/2015
  * Time: 11:58 PM
  */
+
+/*// work in progress possibly?
+function roll()
+{
+    return rand(0,3);
+}
+
+function match()
+{
+
+    $num1 = roll();
+    $num2 = roll();
+    $num3 = roll();
+
+    if($num1==$num2)
+    {
+        $num2= roll();
+    }
+    if($num1==$num3)
+    {
+        $num3=roll();
+    }
+    if($num2==$num3)
+    {
+        $num3 = roll();
+    }
+    if($num1==$num2||$num1==$num3||$num2==$num3)
+    {
+        match();
+    }
+    else
+    {
+        $myArray = array($num1,$num2,$num3);
+        return $myArray;
+    }
+
+   return "";
+}*/
 ?>
+
 
 <div class="gamesStructure col-md-12">
     <div style="border-radius: 5px; background-color: #ffffff; padding: 15px; color: #333333">
+
+            <?php
+
+            $a = $PicturesArray;
+            $num1 = rand(0,sizeof($PicturesArray));
+            $num2 =rand(0,sizeof($PicturesArray));
+            $num3 =rand(0,sizeof($PicturesArray));
+
+            $position1 = $a[$num1];
+            $position2 = $a[$num2];
+            $position3 = $a[$num3];
+
+
+
+
+            ?>
+
+
     <center><h3><span>What is SLUGO?</span></h3></center>
     <p><center>SLUGO is where you want to be! SLUGO is a bi-annual, 12-hour
         gaming convention, hosted by the SELU ACM. Every semester, gamers look forward
@@ -17,10 +74,14 @@
         and console tournaments, featuring some of the newest and hottest titles, and
         some of those timeless favorites.</center></p>
     </div>
+
+
             <div class="row">
                 <div class="col-sm-6 col-md-4 homePadding" style="border-radius: 5px">
                     <div class="thumbnail" style="  border-radius: 5px;">
-                        <img style="  border-radius: 5px;" src="../content/images/homeImages/IMG_0280.JPG" alt="...">
+
+
+                        <img style="  border-radius: 5px;" src="<?=$position1['path']?>" alt="...">
                         <!--<div class="caption">
                             <h3>Thumbnail label</h3>
                         </div>-->
@@ -28,7 +89,7 @@
                 </div>
                 <div class="col-sm-6 col-md-4 homePadding">
                     <div class="thumbnail" style="  border-radius: 5px;">
-                        <img style="  border-radius: 5px;" src="../content/images/homeImages/IMG_0111.JPG" alt="...">
+                        <img style="  border-radius: 5px;" src="<?=$position2['path']?>" alt="...">
 
                         <!--<div class="caption">
                             <h3>Thumbnail label</h3>
@@ -37,13 +98,14 @@
                 </div>
                 <div class="col-sm-6 col-md-4 homePadding">
                     <div class="thumbnail" style="  border-radius: 5px;">
-                        <img style="  border-radius: 5px;" src="../content/images/homeImages/IMG_0544.JPG" alt="...">
+                        <img style="  border-radius: 5px;" src="<?=$position3['path']?>" alt="...">
                         <!--<div class="caption">
                             <h3>Thumbnail label</h3>
                         </div>-->
                     </div>
                 </div>
             </div>
+
 
     <!-- SPONSOR LIST TILE -->
     <!-- WILL PULL TOURNAMENT LIST FROM DATABASE AND MAKE A TILE FOR IT -->

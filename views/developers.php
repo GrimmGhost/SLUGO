@@ -21,8 +21,6 @@ $DevelopersDatabase = new Developer_database_files;
 $rows = $DevelopersDatabase->getRows();
 $DevelopersDataArray = $DevelopersDatabase->getArray();
 
-//$sideBar = "shared/sideBar/sideBar.php";
-//$page = "../login/html/contactView.php";
+
 $page = "../views/pages/Info/DeveloperView.php";
-//require_once '../login/contact.php';
 include "shared/templateNEW.php";
