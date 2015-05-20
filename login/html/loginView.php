@@ -70,7 +70,9 @@
             <input style="padding: 15px; background-color: cornflowerblue; border-color: transparent" type="submit" class="btn btn-default btn-block" value="Log in">
 
         </form>
+        <center><a style="color: #333333;" href="../views/forgotUsername.php">Forgot your Username? Click Here</a></center>
         <center><a style="color: #333333;" href="../views/forgotPassword.php">Forgot your password? Click Here</a></center>
+
     </div>
 
     <div class="col-md-2">

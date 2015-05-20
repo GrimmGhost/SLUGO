@@ -76,6 +76,19 @@ class User
         }
         return false;
     }
+    public function findEmail($user = null)
+    {
+        if ($user) {
+            $field = (is_numeric($user)) ? 'id' : 'email';
+            $data = $this->_db->get('users', array($field, '=', $user));
+
+            if ($data->count()) {
+                $this->_data = $data->first();
+                return true;
+            }
+        }
+        return false;
+    }
 
     public function login($username = null, $password = null, $remember = false)
     {
@@ -123,6 +136,27 @@ class User
             Session::put($this->_sessionName, $this->data()->id);
         } else {
             $user = $this->find($username);
+
+            if ($user) {
+                if ($this->data()->email === $email) {
+                    Session::put($this->_sessionName, $this->data()->id);
+                }
+                return true;
+            }
+        }
+
+
+        return false;
+    }
+    public function forgotUser( $email = null)
+    {
+
+
+        if (!$email && $this->exists()) {
+            //log user in
+            Session::put($this->_sessionName, $this->data()->id);
+        } else {
+            $user = $this->findEmail($email);
 
             if ($user) {
                 if ($this->data()->email === $email) {
